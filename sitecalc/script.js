@@ -32,3 +32,23 @@ function calcGeometria() {
    // = (${bw1}-${He1}).(${h1}-${he1})
    // = 2.(${bw1}+${h1} -2.${he1}) 
 }  
+
+function verifDiagonal(params) {
+    let tk = document.querySelector('.txttk')
+    let concreto = document.querySelector('.txtc')
+    let ae2 = document.querySelector('.txtae')
+    let he2 = document.querySelector('.txthe')
+
+    let fcd = Number(concreto.value)/14
+    let tsd = 1.4*Number(tk.value)*100
+    let alphav2 = -1*(Number(concreto.value)/250) + 1
+    let trd2 = 0.5*alphav2*fcd*Number(ae2.value)*Number(he2.value)
+
+    resverif.innerHTML = `Tsd = ${tsd.toFixed(2)}kN.cm e Trd2 = ${trd2.toFixed(2)}kN.cm`
+
+    if (tsd < trd2) {
+        resverif1.innerHTML = `Tsd < Trd2 Portanto não haverá esmagamento na biela comprimida`
+    } else {
+        resverif1.innerHTML = `Tsd => Trd2 !!!Haverá esmagamento na biela comprimida!!!`
+    }
+}
