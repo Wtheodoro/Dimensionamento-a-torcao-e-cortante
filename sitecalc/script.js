@@ -52,3 +52,15 @@ function verifDiagonal(params) {
         resverif1.innerHTML = `Tsd => Trd2 !!!Haverá esmagamento na biela comprimida!!!`
     }
 }
+
+function calcEstribo() {
+    let tk3 = document.querySelector('.txttk')
+    let ca3 = document.querySelector('.txtca')
+    let ae3 = document.querySelector('.txtae')
+
+    let tsd3 = 1.4*Number(tk3.value)*100
+    let fywd = Number(ca3.value)/1.15
+    let a90s = tsd3/(2*fywd*Number(ae3.value))
+
+    rescalcEstribo.innerHTML = `(A90/s) = ${a90s.toFixed(4)}cm²/cm`
+}
