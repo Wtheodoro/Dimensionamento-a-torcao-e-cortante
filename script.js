@@ -33,7 +33,7 @@ function calcGeometria() {
    // = 2.(${bw1}+${h1} -2.${he1}) 
 }  
 
-function verifDiagonal(params) {
+function verifDiagonal() {
     let tk = document.querySelector('.txttk')
     let concreto = document.querySelector('.txtc')
     let ae2 = document.querySelector('.txtae')
@@ -64,3 +64,36 @@ function calcEstribo() {
 
     rescalcEstribo.innerHTML = `(A90/s) = ${a90s.toFixed(4)}cm²/cm`
 }
+
+function calcLongitude() {
+    let tk4 = document.querySelector('.txttk')
+    let ue4 = document.querySelector('.txtue')
+    let ca4 = document.querySelector('.txtca')
+    let ae4 = document.querySelector('.txtae')
+
+    let tsd4 = 1.4*Number(tk4.value)*100
+    let fywd4 = Number(ca4.value)/1.15
+    let asl = (tsd4*Number(ue4.value))/(fywd4*2*Number(ae4.value))
+
+    resCalcLong.innerHTML = `Asl = ${asl.toFixed(2)}cm²`
+}
+/* testando a atribuição a variavel = Number(let) que vi no site do mozilla
+function calcLongitude(params) {
+    let tk4 = document.querySelector('.txttk')
+    let tk4n = Number(tk4)
+    let ue4 = document.querySelector('.txtue')
+    let ue4n = Number(ue4)
+    let ca4 = document.querySelector('.txtca')
+    let ca4n = Number(ca4)
+    let ae4 = document.querySelector('.txtae')
+    let ae4n = Number(ae4)
+
+    let tsd4 = tk4*1.4*100
+    let tsd4n = Number(tsd4)
+    let fywd4 = ca4n/1.15
+    let fywd4n = Number(fywd4)
+    let asl = (tsd4n*ue4n)/(fywd4n*2*ae4n)
+    
+    resCalcLong.innerHTML = `Asl = ${asl.toFixed(2)}cm²`
+}
+*/
