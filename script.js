@@ -77,23 +77,18 @@ function calcLongitude() {
 
     resCalcLong.innerHTML = `Asl = ${asl.toFixed(2)}cm²`
 }
-/* testando a atribuição a variavel = Number(let) que vi no site do mozilla
-function calcLongitude(params) {
-    let tk4 = document.querySelector('.txttk')
-    let tk4n = Number(tk4)
-    let ue4 = document.querySelector('.txtue')
-    let ue4n = Number(ue4)
-    let ca4 = document.querySelector('.txtca')
-    let ca4n = Number(ca4)
-    let ae4 = document.querySelector('.txtae')
-    let ae4n = Number(ae4)
 
-    let tsd4 = tk4*1.4*100
-    let tsd4n = Number(tsd4)
-    let fywd4 = ca4n/1.15
-    let fywd4n = Number(fywd4)
-    let asl = (tsd4n*ue4n)/(fywd4n*2*ae4n)
-    
-    resCalcLong.innerHTML = `Asl = ${asl.toFixed(2)}cm²`
+function calcMin() {
+    let ca5 = document.querySelector('.txtca')
+    let he5 = document.querySelector('.txthe')
+    let ue5 = document.querySelector('.txtue')
+    let concreto5 = document.querySelector('.txtc')
+
+    let fctm = 0.3*((Number(concreto5.value)**2)**(1/3))
+    let fctm10 = fctm/10
+    let psw = 0.2*(fctm/Number(ca5.value))
+    let amin = psw*Number(he5.value)
+
+    resCalcMin.innerHTML = `Psw,min = Pslmin = ${psw.toFixed(6)}    Fctm = ${fctm.toFixed(2)}MPa = ${fctm10.toFixed(3)}     (A90/s)mín = (Asl/Ue)mín = ${amin.toFixed(5)}cm²/cm`
+
 }
-*/
